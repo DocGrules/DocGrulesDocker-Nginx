@@ -1,6 +1,14 @@
 # DocGrulesDocker-Nginx
 Repositório para documentação e testes com docker e balanceamento com Nginx
 
+A diretiva “upstream” aponta o Virtual Host a ser utilizado pelo Balanceador de Carga, 
+dentro os parâmetros “server” indicam os servidores de backend, ou seja, será o nodes utilizados utilizados no cluster.
+Abaixo possui os parâmetros proxy_set_header, eles tem a finalidade de trocar os 
+campos do cabeçalho HTTP por variáveis. 
+E por último a diretiva “server” faz o proxy pass, 
+declarando que o contexto raiz “/” será direcionado para o Virtual Host do Balanceador de Carga.
+Feito o procedimento acima, podemos adicionar o nginx no boot do sistema operacional e reiniciar o serviço do Nginx.
+
 Nginx vs Apache
 Em termos de mundo real de casos de uso, uma das comparações mais comuns entre Apache e Nginx é a maneira em que cada servidor lida com solicitações de conteúdo estático e dinâmico.
 
